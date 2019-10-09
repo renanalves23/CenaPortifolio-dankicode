@@ -1,0 +1,257 @@
+*{
+	margin:0;
+	padding:0; 
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+html,body{
+	height: 100%;
+	width: 100%;
+}
+
+/**Divs Gerais-- é o container dos logos do cabeçalho**/
+.container{
+	/*height: 150px;*/
+	width:100%;
+	max-width: 1200px;/*mudado de 1280px*/
+	margin:0 auto;
+	/*background-color: #9e8583;*/
+	/*background: gray; */
+}
+
+.clear{
+	clear: both;
+}
+
+/********/
+
+header{/*padding do header é o espaçamento do cabeçalho*/
+	background-color: #c7b3b1;
+	/*border: 3px solid black;*/
+	/*box-shadow: 3px 3px 3px 5px rgb(180,0,0);*/
+	padding:10px 2% 40px 2%;/*mudado de 10px 0; para atuar melhor no responsivo*/
+	width: 100%;
+}
+
+.logo-1{
+	float: left;
+	width: 150px;/*mudado de 100px*/
+	height: 60px;/*mudado de 70px*/
+	background-image:url('../imagens/logo1.png');
+	background-size: 100% auto;/*mudado de 100% 100%*/
+	background-position: center;
+	background-repeat: no-repeat;/*boa prática*/
+	/*background-color: purple;*/
+}
+
+.logo-2{
+	float: right;
+	width: 160px;
+	height: 60px;                                    /**copiado de cima***/
+	background-image:url('../imagens/logo2.png');
+	background-size: 100% auto;/*mudado de 100% 100%*/
+	background-position: center;
+	background-repeat: no-repeat;/*boa prática*/
+	/*background-color: green;*/
+}														/********/
+ /*Depois do header(cabeçalho)*/
+ /*Delimita a posição, neste caso, posição do BG em relação à propriedade anterior(HEADER) */
+ section.cover-form{
+ 	width: 100%;
+ 	/*padding:0px 2%;*/  /*Tirado para melhorar o responsivo*/
+ 	margin-top: 0;
+ }
+
+.bg{
+	position: relative; /*Trabalhando sem o float*/
+	height: 560px;
+	background-position: center;
+	background-size: cover;
+	/*position: relative;/*não funciona aqui. Acredito que seja pq o bg não esta dentro do header e sim da section*/
+	/*top: -5%;*/
+	background-image: url('../imagens/bg-form.jpg');
+	
+}
+
+.form-container{/*espaço principal para o formulário*/
+	/*float: right;*/
+	position: absolute; /*Trabalhando sem o float*/
+	top: -2.5%;
+	right: 30px;
+	/*margin-right: 40px;*/
+	width: 400px;/*mudado de 300px*/
+	height: 105%;/*mudado de 100%*/
+	/*position: relative;*/
+	box-shadow:1px 1px 1px 2px rgb(120,120,120);
+	background-color: rgba(150,150,150,0.5);
+	/*border: 1px dashed black;*//************/
+	/*background-color: rgba(255,255,255,0.6);*/
+}
+
+
+/*.class-h2{
+	background-color: gray;
+}*/
+
+.form-container h2{/*Texto do cabeçalho do formulário*/
+	padding:25px 15px;/*ajustado de 30px 15px*/
+	font-weight: normal;
+	color: gold;
+	font-size: 18px;
+	background-color: rgba(200,200,200,0.5);
+}
+	/*contêm o p e o input*/
+.form-container form{
+	/*position: relative; top: -5%;*//*funcionaria aqui. pegandoo espaço do cabeçalho do form*/
+	margin-top:8px;
+	padding:15px; /*estava 0 2%;*/
+	/*background-color: #ccc;*//***********/
+}
+
+.form-container form p{
+	font-size: 14px;
+	color: #525252;
+}
+
+/*a ordem desses é importante
+	^vvvvvvvvvvv*/
+.form-wraper:not(:first-child){
+	margin-top: 40px;
+}
+
+.form-wraper:last-child{
+	margin-top:20px;
+}
+
+/*^^^^^^^^^^*/
+
+
+.form-container form input[type=text]{
+	width: 100%;
+	border:1px solid #ccc;
+	height: 45px;
+	background-color: #ccc;
+	line-height: 45px;/*usando height e line-height ao inves de: "padding 10px 8px", pq apresenta incompatibilidade com FIREFOX*/
+	padding-left: 10px;
+}
+	/*Por padrão, o input type="submit tem border, então coloca-se border=0;*/
+.form-container form input[type=submit]{/*ainda dentro do form-container*/
+	border:0;
+	height: 50px;
+	width: 100%;
+	text-transform: uppercase;
+	background-color: #033C60;
+	color: white;
+	font-size:25px;
+	cursor: pointer;
+}
+
+section.chamada{
+	width: 100%;
+	height: auto;
+	/*padding:50px 0;*/
+	text-align: center;
+	display: inline-block;
+	/*margin-top: -2.15%;*/
+	/*background-color: rgb(102, 39, 35);*/
+}
+
+
+section.chamada .container{
+	background-color: rgb(102, 39, 35);
+	padding:50px 0;
+	max-height: 200px;
+}
+
+section.chamada h2{
+	width: 96%;
+	max-width: 700px;
+ 	display: inline-block;
+ 	color: white;
+ 	font-size: 30px;
+ 	font-weight: normal;
+ }
+
+section.chamada p{
+	margin-bottom: 15px;
+	margin-top: 15px;
+	font-size: 23px;
+}
+
+
+
+.flex-mosaico{
+	display: flex;/*display flex tenta deixar tudo alinhado*/
+}
+
+.item-1-mosaico{
+	background-position: center;
+	background-size: cover;
+	width: 60%;
+	/*min-width: 	600px;
+	min-height: 400px;	
+	height: auto;*/
+}
+
+.item-2-mosaico{
+	width: 40%;
+	padding: 40px;
+	background-color: #521d18;
+}
+.item-2-mosaico p{
+	color: white;
+}
+
+footer{
+	text-align: center;
+	padding: 20px;
+}
+
+footer img{
+	width: 120px;
+}
+/*Aplicação do responsivo*/
+
+@media screen and (max-width: 960px){
+	.bg{
+		height: auto;
+		padding: 40px 0;
+		text-align: center;
+	}
+
+	.form-container{
+		height: auto;
+		width: 96%;
+		max-width: 400px;
+		position: static;kbb
+		display: inline-block;
+	}
+}
+
+@media screen and (max-width: 768px){
+	
+	.flex-mosaico{
+		display: block;
+	}
+
+	.item-1-mosaico{
+		padding: 70%;
+		width: 100%;
+	}
+
+	.item-2-mosaico{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 510px){
+	header{
+		text-align: center;/*adicionado em conjunto com a div cega*/
+	}
+	.logo-1,.logo-2{ /*outra maneira:(ignorar single quote) '[class^="logo"]{...}' Leia-se: para tudo que começa com logo, aplicar{....}*/ 
+		display: inline-block;/*adicionado em conjunto com a div cega*/
+		float: none;
+		margin-top: 10px;
+	}
+}
